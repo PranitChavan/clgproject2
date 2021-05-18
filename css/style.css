@@ -164,7 +164,7 @@ a {
   align-items: center;
 }
 #main-footer .about li {
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 #main-footer .about a {
   color: var(--main-dark);
