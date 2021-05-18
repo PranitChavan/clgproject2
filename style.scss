@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+// Dark Mode colors
+:root {
+  --main-color: teal;
+  --main-dark: #66fcf1;
+  --main-variant: #45a29e;
+  --body-background: #000;
+  --body-white: #fff;
+  --body-grey: grey;
+  --cancel-btn: red;
+  --light-black: #333;
+  --border-color: #01f9c6;
+}
+
+// Light Mode colors
+.white {
+  --body-background: #ffff;
+  --main-color: #333333;
+  --main-dark: #333333;
+  --body-white: #333333;
+  --light-black: #333;
+  --border-black: #000;
+  --border-color: #333;
+  --main-variant: grey;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-background);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: var(--main-dark);
+  overflow-x: hidden;
+  background-image: url(/img/patd.png);
+}
+
+video {
+  outline: none;
+}
+
+li {
+  list-style: none;
+  font-size: 1rem !important;
+}
+a {
+  color: none;
+}
+
+.info {
+  font-family: 'Ubuntu' !important;
+  font-size: 22px;
+}
+
+.head {
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .react {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: var(--body-white);
+    font-size: 1.2rem;
+  }
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding: 2rem;
+  grid-row-gap: 2rem;
+  margin-top: 40px;
+
+  .bor {
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+  }
+
+  .bb {
+    border-bottom: 1px solid var(--main-color);
+  }
+
+  .chapterend {
+    border-bottom: 1px solid var(--body-grey);
+    margin-top: 0.5rem;
+  }
+
+  .chapter-title {
+    margin-top: 1rem;
+  }
+  .li {
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: var(--main-variant);
+      padding: 3px;
+    }
+  }
+}
+
+// CLASS TO TOGGLE DROPDOWN
+.show {
+  display: none;
+}
+
+.mainvid {
+  display: flex;
+  justify-content: center;
+  margin-top: 7rem;
+
+  .vid {
+    border: 3px solid var(--body-white);
+    border-radius: 8px;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    z-index: 1;
+    box-shadow: -5px -5px 5px var(--main-color);
+  }
+
+  #overlay {
+    position: absolute;
+    height: 950px;
+    background-color: rgba(221, 221, 221, 0);
+    width: 930px;
+    z-index: 2147483647;
+  }
+
+  .vid::before {
+    position: absolute;
+    right: 5px;
+    content: '\f00d';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 1s ease;
+  }
+
+  .vid:hover:before {
+    animation: spin 0.9s ease;
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    color: red;
+  }
+}
+
+#main-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .about {
+    li {
+      margin-top: 2rem;
+    }
+    a {
+      color: var(--main-dark);
+      font-size: large;
+      border-bottom: 3px solid var(--main-variant);
+
+      &:hover {
+        text-decoration: none;
+        border-color: var(--main-dark);
+      }
+    }
+  }
+}
+
+// To Hide Download Option
+video::-webkit-media-controls {
+  visibility: hidden;
+}
+
+video::-webkit-media-controls-enclosure {
+  visibility: visible;
+}
+
+// THEME SELECTOR
+
+.theme {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cat-image {
+  width: 800px;
+  height: 500px;
+}
+
+// Border Animation when hovered
+
+#main
+  :is(.chaptersys1, .chaptersys2, .chaptersys3, .chaptersys4, .chaptersys5, .chaptersys6) {
+  position: relative;
+  display: inline;
+}
+
+#main
+  :is(.chaptersys1, .chaptersys2, .chaptersys3, .chaptersys4, .chaptersys5, .chaptersys6)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.175rem;
+  background-color: var(--main-dark);
+  left: 0;
+  bottom: -10px;
+}
+
+.center::after {
+  content: '';
+  transform: scale(0, 1);
+  transition: transform 250ms ease;
+}
+
+.center:hover::after {
+  transform: scale(1, 1);
+}
+
+.li {
+  position: relative;
+}
+
+.li::after {
+  content: '';
+  background-color: var(--border-color);
+  width: 100%;
+  height: 0.175rem;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: transform 250ms ease;
+}
+
+.coolb::after {
+  transform: scale(0, 0);
+}
+
+.coolb:hover::after {
+  transform: scale(1, 1);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+// MEDIA QUERIES
+@import 'media';

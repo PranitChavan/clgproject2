@@ -1,0 +1,181 @@
+// IPAD TABLETS
+@media screen and(min-width:768px) and(max-width:1000px) {
+  .mainvid {
+    margin-top: 2rem;
+    #overlay {
+      width: 650px !important;
+    }
+
+    .vid {
+      height: 1000px;
+    }
+  }
+}
+
+// IPAD LANDSCAPE
+@media screen and (min-height: 760px) and (max-height: 768px) {
+  .mainvid {
+    margin-top: 2rem;
+  }
+}
+
+// SMALL SCREEN'S (MOBILE DEVICES)
+@media screen and (min-width: 362px) and(max-width:600px) {
+  .mainvid {
+    margin-top: 0;
+
+    video {
+      width: 390px;
+      height: 280px;
+      margin-top: 1rem;
+    }
+
+    .vid {
+      height: 300px !important;
+    }
+
+    .vid::before {
+      font-size: 25px;
+      right: 0px;
+      top: -8px;
+    }
+
+    #overlay {
+      width: 350px !important;
+      height: 250px !important;
+      margin-top: 1.3rem !important;
+    }
+  }
+
+  #main {
+    grid-template-columns: 1fr 1fr;
+    text-align: none;
+    padding: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    grid-gap: 3rem;
+  }
+
+  .mb::after {
+    display: none;
+  }
+}
+
+// MOTO G4
+@media screen and (min-width: 300px) and(max-width:362px) {
+  .mainvid {
+    margin-top: 0;
+
+    video {
+      width: 350px;
+      height: 280px;
+      margin-top: 1rem;
+    }
+
+    .vid {
+      height: 300px !important;
+    }
+
+    .vid::before {
+      font-size: 28px;
+      right: 0px;
+      top: -8px;
+    }
+    #overlay {
+      width: 300px !important;
+      height: 255px !important;
+    }
+  }
+
+  #main {
+    grid-template-columns: 1fr 1fr;
+    text-align: none;
+    padding: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    grid-gap: 3rem;
+  }
+  .mb::after {
+    display: none;
+  }
+}
+
+// MOTO G4 LANDSCAPE
+
+@media (min-height: 350px) and (max-height: 360px) {
+  .mainvid {
+    margin-top: 0rem;
+    #overlay {
+      width: 500px;
+      height: 450px;
+    }
+  }
+
+  video {
+    width: 630px;
+    height: 480px;
+  }
+  .mb::after {
+    display: none;
+  }
+
+  .vid::before {
+    font-size: 35px;
+    right: 0px;
+    top: 0;
+  }
+}
+
+// SURFACE DUO
+
+@media (min-width: 540px) and (max-width: 600px) {
+  .mainvid {
+    margin-top: 0rem;
+
+    video {
+      width: 600px;
+      height: 280px;
+      margin-top: 1rem;
+    }
+
+    .vid {
+      height: 300px !important;
+    }
+
+    .vid::before {
+      font-size: 35px;
+      right: 0px;
+      top: 0;
+    }
+  }
+
+  .mb::after {
+    display: none;
+  }
+}
+
+// LANDSCAPE
+@media (max-height: 580px) {
+  .mainvid {
+    margin-top: 0rem;
+  }
+  .mb::after {
+    display: none;
+  }
+  .vid::before {
+    font-size: 35px;
+    right: 0px;
+    top: 0;
+  }
+}
+
+// 1920x1080p Screens cancel button fix
+@media (min-width: 1900px) and (max-width: 1921px) {
+  #main {
+    grid-gap: 1rem;
+  }
+}

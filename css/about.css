@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #24292d;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #2bbaff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg h2 {
+  position: relative;
+  color: #fff;
+  font-size: 5em;
+}
+
+.bg h2::after {
+  content: '\f063';
+  font: normal normal normal 50px/1 FontAwesome;
+  display: block;
+}
+
+section {
+  padding: 100px;
+}
+
+.SkewedOne {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #323232;
+  transform: skewY(-15deg);
+  transform-origin: top left;
+}
+
+.SkewedTwo {
+  position: absolute;
+  bottom: -100%;
+  right: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #323232;
+  transform: skewY(15deg);
+  transform-origin: top right;
+}
+
+#cards {
+  background-color: #24292d;
+  padding-top: 20rem;
+}
+
+.sec {
+  background-color: #24292d;
+  margin-top: 20rem;
+}
+
+.sec1 {
+  background-color: #24292d;
+  margin-top: 20rem;
+}
+
+/* CARDS START HERE */
+/* CARD 1 */
+
+.sec1 {
+  display: flex;
+  transition: background 250ms ease;
+}
+
+.sec1.dark1 {
+  background-color: #24292d;
+}
+
+.sec1 .card1 {
+  position: relative;
+  background-color: #fff;
+  width: 300px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: background 250ms ease;
+}
+
+.sec1.dark1 .card1 {
+  background-color: #323840;
+}
+
+.main1 .info1 h3 {
+  font-weight: 500;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  text-align: center;
+  color: #2fa1ff;
+}
+
+.main1 .info1 span {
+  font-weight: 400;
+  font-size: 0.75em;
+  line-height: 1.2em;
+  color: #777;
+  transition: background 250ms ease;
+}
+
+.sec1.dark1 .info1 span {
+  color: #fff;
+}
+.main1 .pic1 {
+  border-radius: 50px;
+}
+
+.main1 .social1 .social-icons1 {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.social1 .social-icons1 li {
+  position: relative;
+}
+
+.social-icons1 a {
+  position: relative;
+  background-color: #e9f5ff;
+  color: #2fa1ff;
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 25px;
+  transition: background 250ms ease;
+}
+
+.sec1.dark1 .social-icons1 a {
+  background-color: #404852;
+}
+
+.social-icons1 a:hover {
+  color: #fff;
+}
+
+.social-icons1 a .fa {
+  z-index: 10000;
+}
+
+.social-icons1 a::after {
+  content: '';
+  position: absolute;
+  background-color: #2fa1ff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 250ms ease;
+}
+
+.social-icons1 a:hover::after {
+  transform: scale(1);
+}
+
+.toggle1 {
+  position: absolute;
+  background-color: #e9f5ff;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background 250ms ease;
+}
+
+.sec1.dark1 .toggle1 {
+  background-color: #404852;
+}
+
+.toggle1::after {
+  content: '\f186';
+  font-weight: 800;
+  font-family: fontAwesome;
+  color: #2fa1ff;
+}
+.sec1.dark1 .toggle1::after {
+  color: #fff;
+}
+
+.sec1.dark1 .toggle1::after {
+  content: '\f185';
+}
+
+/* CARD 2 */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f8ff;
+  transition: background 250ms ease;
+}
+
+section.dark {
+  background-color: #24292d;
+}
+
+section .card {
+  position: relative;
+  background-color: #fff;
+  width: 300px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: background 250ms ease;
+}
+
+section.dark .card {
+  background-color: #323840;
+}
+
+.main .info h3 {
+  font-weight: 500;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  text-align: center;
+  color: #2fa1ff;
+}
+
+.main .info span {
+  font-weight: 400;
+  font-size: 0.75em;
+  line-height: 1.2em;
+  color: #777;
+  transition: background 250ms ease;
+}
+
+.sec.dark .info span {
+  color: #fff;
+}
+
+.main .pic {
+  border-radius: 50px;
+}
+
+.main .social .social-icons {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.social .social-icons li {
+  position: relative;
+}
+
+.social-icons a {
+  position: relative;
+  background-color: #e9f5ff;
+  color: #2fa1ff;
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 25px;
+  transition: background 250ms ease;
+}
+
+section.dark .social-icons a {
+  background-color: #404852;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.social-icons a .fa {
+  z-index: 10000;
+}
+
+.social-icons a::after {
+  content: '';
+  position: absolute;
+  background-color: #2fa1ff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 250ms ease;
+}
+
+.social-icons a:hover::after {
+  transform: scale(1);
+}
+
+.toggle {
+  position: absolute;
+  background-color: #e9f5ff;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background 250ms ease;
+}
+
+section.dark .toggle {
+  background-color: #404852;
+}
+
+.toggle::after {
+  content: '\f186';
+  font-weight: 800;
+  font-family: fontAwesome;
+  color: #2fa1ff;
+}
+section.dark .toggle::after {
+  color: #fff;
+}
+
+section.dark .toggle::after {
+  content: '\f185';
+}
+
+#main-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about li {
+  margin-top: 20rem;
+  margin-bottom: 1.5rem;
+}
+
+.about .main {
+  color: #fff;
+  font-size: large;
+  border-bottom: 3px solid grey;
+}
+
+.main:hover {
+  border-color: white;
+}
