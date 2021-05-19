@@ -257,6 +257,10 @@ video::-webkit-media-controls-enclosure {
   margin-top: 0.5rem;
 }
 
+.lanlogo {
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   .mainvid {
     margin-top: 2rem;
