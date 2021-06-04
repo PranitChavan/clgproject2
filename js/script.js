@@ -98,7 +98,7 @@ function addVid(className, vidName) {
     vid.style.height = '500px';
 
     overlay.style.width = '770px';
-    overlay.style.height = '470px';
+    overlay.style.height = '450px';
 
     // Adding Video
     vid.innerHTML = `<video width="800" height="500" controls  autoplay=1 poster="/img/poster1.gif" id="video" >
