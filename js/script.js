@@ -95,6 +95,7 @@ function init() {
 
 dropdownMenus.forEach((el) => {
   el.addEventListener('click', (e) => {
+    // If clicked element contains href attribute then
     if (e.target.getAttribute('href')) {
       // Adjusting vid player size
       vid.style.width = '820px';
