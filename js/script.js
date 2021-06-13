@@ -8,6 +8,7 @@ const body = document.querySelector('body');
 const lightTheme = document.querySelector('.light');
 const darkTheme = document.querySelector('.dark');
 const overlay = document.querySelector('#overlay');
+const dropdownMenus = document.querySelectorAll('.main-content');
 
 // CLOSE VIDEO
 cancelIcon.addEventListener('click', () => {
@@ -91,26 +92,27 @@ function init() {
 }
 
 // ADD VIDS
-function addVid(className, vidName) {
-  document.querySelector(className).addEventListener('click', () => {
-    // Adjusting vid player size
-    vid.style.width = '820px';
-    vid.style.height = '500px';
 
-    overlay.style.width = '770px';
-    overlay.style.height = '450px';
+dropdownMenus.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    if (e.target.getAttribute('href')) {
+      // Adjusting vid player size
+      vid.style.width = '820px';
+      vid.style.height = '500px';
 
-    // Adding Video
-    vid.innerHTML = `<video width="800" height="500" controls  autoplay=1 poster="/img/poster1.gif" id="video" >
-    <source src="/vids/${vidName}.mp4" type="video/mp4">
+      overlay.style.width = '770px';
+      overlay.style.height = '450px';
+
+      const className = e.target.getAttribute('href');
+
+      //Adding Video
+      vid.innerHTML = `<video width="800" height="500" controls  autoplay=1 poster="/img/poster1.gif" id="video" >
+    <source src="/vids/${className}.mp4" type="video/mp4">
     Please Upgrade your browser or change the browser.Your browser does not support the video tag.
-  </video>`;
+     </video>`;
 
-    // Smooth Scroll to Vid PLayer
-    vid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Smooth Scroll to Vid PLayer
+      vid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
-}
-
-for (let i = 1; i <= 32; i++) {
-  addVid(`.a${i}`, `a${i}`);
-}
+});
