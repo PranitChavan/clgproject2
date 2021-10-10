@@ -9,16 +9,18 @@ const lightTheme = document.querySelector('.light');
 const darkTheme = document.querySelector('.dark');
 const overlay = document.querySelector('#overlay');
 const dropdownMenus = document.querySelectorAll('.main-content');
+const search = document.querySelector('#search');
+const searchBtn = document.querySelector('#btnSearch');
 
 // CLOSE VIDEO
 cancelIcon.addEventListener('click', () => {
   vid.innerHTML = '';
 
   vid.style.width = '1000px';
-  vid.style.height = '1000px';
+  vid.style.height = '800px';
 
   overlay.style.width = '900px';
-  overlay.style.height = '900px';
+  overlay.style.height = '700px';
 });
 
 // ADDING DARK/LIGHT THEME
@@ -61,35 +63,41 @@ document.addEventListener('keydown', (e) => {
 
 // FETCHING DATA FROM API AND DISPLAYING GIF
 
-let APIKEY = 'T2aR1m0un7722AGQA6VLKg4KoBUuelTS';
+const getData = async function () {
+  try {
+    const str = search.value.trim();
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=T2aR1m0un7722AGQA6VLKg4KoBUuelTS&limit=6&q=${str}`;
 
-document.addEventListener('DOMContentLoaded', init);
-function init() {
-  document.getElementById('btnSearch').addEventListener('click', (ev) => {
-    ev.preventDefault();
+    const response = await fetch(url);
+    const data = await response.json();
 
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
-    let str = document.getElementById('search').value.trim();
-    url = url.concat(str);
+    if (data.data.length === 0) throw new Error(`No gif's found for ${str} `);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((content) => {
-        console.log(content.data);
+    displayMemes(data);
+  } catch (err) {
+    alert(err);
+  }
+};
 
-        let img = document.createElement('img');
+searchBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  getData();
+});
 
-        img.src = content.data[0].images.downsized.url;
+const displayMemes = function (data) {
+  document.querySelector('#search').value = '';
+  vid.innerHTML = '';
 
-        vid.appendChild(img);
+  const content = data.data;
 
-        document.querySelector('#search').value = '';
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  });
-}
+  const memes = content
+    .map((meme) => {
+      return `<img src="${meme.images.downsized.url}" width="300" height="300"  class="gif"/> `;
+    })
+    .join('');
+
+  vid.insertAdjacentHTML('afterbegin', memes);
+};
 
 // ADD VIDS
 
