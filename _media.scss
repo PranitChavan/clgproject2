@@ -32,6 +32,13 @@
 
     .vid {
       height: 300px !important;
+      flex-direction: row;
+    }
+
+    .gif {
+      width: 100px;
+      height: 100px;
+      margin-top: 0;
     }
 
     .vid::before {

@@ -305,6 +305,12 @@ video::-webkit-media-controls-enclosure {
   }
   .mainvid .vid {
     height: 300px !important;
+    flex-direction: row;
+  }
+  .mainvid .gif {
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
   }
   .mainvid .vid::before {
     font-size: 25px;
